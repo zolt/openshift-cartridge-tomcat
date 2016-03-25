@@ -69,7 +69,7 @@
     <Connector port="${OPENSHIFT_TOMCAT_HTTP_PORT}" protocol="HTTP/1.1" 
                connectionTimeout="20000" 
                redirectPort="8443" 
-               address="${OPENSHIFT_TOMCAT_IP}"/>
+               address="${OPENSHIFT_TOMCAT_IP}" URIEncoding="UTF-8"/>
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
