@@ -14,13 +14,13 @@ if [ ! -d "$SYSTEM_TOMCAT_DIR" ]; then
   pushd "${OPENSHIFT_DATA_DIR}"
   if [ "${version}" == "6.0" ]; then
     VERSION="6.0.41"
-    wget "http://psg.mtu.edu/pub/apache/tomcat/tomcat-6/v${VERSION}/bin/apache-tomcat-${VERSION}.tar.gz"
+    wget --user teamcity --password teamcityPwd "http://repo.sib-soft.ru/artifactory/libs-release-local/sibir/cas/openshift/apache-tomcat-7.0.39.tar.gz"
     tar xvzf ${OPENSHIFT_DATA_DIR}/apache-tomcat-${VERSION}.tar.gz
     rm -f ${OPENSHIFT_DATA_DIR}/apache-tomcat-${VERSION}.tar.gz
     ln -s ${OPENSHIFT_DATA_DIR}/apache-tomcat-${VERSION} ${OPENSHIFT_DATA_DIR}/apache-tomcat-6.0
   else
     VERSION="7.0.55"
-    wget "http://psg.mtu.edu/pub/apache/tomcat/tomcat-7/v${VERSION}/bin/apache-tomcat-${VERSION}.tar.gz"
+    wget --user teamcity --password teamcityPwd "http://repo.sib-soft.ru/artifactory/libs-release-local/sibir/cas/openshift/apache-tomcat-7.0.39.tar.gz"
     tar xvzf ${OPENSHIFT_DATA_DIR}/apache-tomcat-${VERSION}.tar.gz
     rm -f ${OPENSHIFT_DATA_DIR}/apache-tomcat-${VERSION}.tar.gz
     ln -s ${OPENSHIFT_DATA_DIR}/apache-tomcat-${VERSION} ${OPENSHIFT_DATA_DIR}/apache-tomcat-7.0
